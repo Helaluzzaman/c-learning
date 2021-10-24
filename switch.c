@@ -2,9 +2,21 @@
 #include<math.h>
 int main(int argc, char const *argv[])
 {
+    /* Grading program using switch. Use of (...) operator in case statement. */
+    
     double number;
-    printf("Enter your number:");
-    scanf("%lf", &number);
+    label:{
+        printf("Enter your number:");
+        scanf("%lf", &number);
+    }
+    if(number > 100){
+        printf("%d is invalid mark, Enter in between 0 to 100.\n", (int)number );
+        goto label;
+    }
+    if(number < 40){
+        printf("You failed.");
+        return 0;
+    }
     switch ((int)number )
     {
     case 80 ... 100:
